@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 import logo from "./logo.jpg"; // Add your college logo in `assets` folder
 
+
 const Footer = () => {
   return (
     <footer className="footer">
