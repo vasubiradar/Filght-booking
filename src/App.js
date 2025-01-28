@@ -6,7 +6,6 @@ import AdminPage from "./Pages/AdminPage.js";
 import HomePage from "./Pages/HomePage.js";
 import Navbar from "./Pages/Navbar";
 import Footer from "./Pages/Footer";
-import GenerateIDCard from "./Pages/GenerateIdCard.js";
 import './App.css';
 
 import { getFromLocalStorage, setToLocalStorage } from "./Services/LocalStorageUtil.js";
@@ -45,7 +44,7 @@ function App() {
             path="/admin"
             element={isAuthenticated && isAdmin ? <AdminPage /> : <Signin setIsAuthenticated={setIsAuthenticated} setIsUser={setIsUser} setIsAdmin={setIsAdmin} />}
           />
-          <Route path="/generate-id-card" element={<GenerateIDCard />} />
+          
       </Routes>
       <Footer />
     </BrowserRouter>
