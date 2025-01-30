@@ -1,9 +1,8 @@
 import React from "react";
 import "./HomePage.css";
 
-const HomePage = () => {
-  const heroImage = "https://t3.ftcdn.net/jpg/02/84/36/48/360_F_284364895_3uU4w7qfgaBtBD0ugtA1SVgXHQJ5kL8d.jpg"; // Example image
 
+const HomePage = () => {
   const flightCoupons = [
     "https://via.placeholder.com/300x150?text=Flight+Coupon+1",
     "https://via.placeholder.com/300x150?text=Flight+Coupon+2",
@@ -14,15 +13,15 @@ const HomePage = () => {
     <div className="homepage-container">
       {/* Navbar with Flight Booking Logo */}
       <nav className="navbar">
-        <div className="navbar-logo">
+        {/* <div className="navbar-logo">
           <img src="https://via.placeholder.com/150x50?text=Flight+Logo" alt="Flight Booking Logo" />
-        </div>
+        </div> */}
       </nav>
 
       {/* Full Screen Video Section */}
       <section className="video-section">
         <video className="full-video" autoPlay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>
