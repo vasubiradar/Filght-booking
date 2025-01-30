@@ -1,19 +1,21 @@
-import axios from "axios";
+// UserService.js
+import axios from 'axios';
 
-const USER_REST_API_URL = "http://localhost:8900/users";
+const API_URL = 'http://localhost:8900/users';  // Replace with your API endpoint
 
-class UserService {
-  getUsers() {
-    return axios.get(USER_REST_API_URL);
-  }
+// Fetch all users
+const getUsers = () => {
+  return axios.get(API_URL);
+};
 
-  addUser(user) {
-    return axios.post(USER_REST_API_URL, user);
-  }
+// Fetch a user by their ID
+const getUserById = (userId) => {
+  return axios.get(`${API_URL}/${userId}`);
+};
 
-  findUserByEmail(email) {
-    return axios.get(`${USER_REST_API_URL}/email/${email}`);
-  }
-}
+export default {
+  getUsers,
+  getUserById,
+};
 
-export default new UserService();
+

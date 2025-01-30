@@ -1,0 +1,96 @@
+/* General Container for Contact Us Page */
+.contact-container {
+    background: url('https://images.pexels.com/photos/674783/pexels-photo-674783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .contact-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .contact-overlay h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  
+  .form-group textarea {
+    height: 150px;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  .submit-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add responsiveness for mobile */
+  @media (max-width: 768px) {
+    .contact-overlay {
+      padding: 20px;
+    }
+  
+    .contact-overlay h1 {
+      font-size: 2rem;
+    }
+  
+    .form-group label {
+      font-size: 1rem;
+    }
+  
+    .submit-button {
+      font-size: 1rem;
+    }
+  }
+  

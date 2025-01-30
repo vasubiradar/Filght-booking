@@ -21,20 +21,21 @@ const Signin = ({ setIsAuthenticated, setIsUser, setIsAdmin }) => {
           setIsAuthenticated(true);
           setIsUser(user.role === "user");
           setIsAdmin(user.role === "admin");
-          
+
           localStorage.setItem("isAuthenticated", true);
           localStorage.setItem("isUser", user.role === "user");
           localStorage.setItem("isAdmin", user.role === "admin");
           localStorage.setItem("userId", user.id);  // Store user ID in local storage
-          
+
           // Redirect to home page if user, or to admin page if admin
           if (user.role === "admin") {
             navigate("/admin");
-            window.location.reload();
           } else {
             navigate("/");
-            window.location.reload();
           }
+
+          // Reload the page after navigation to update the UI
+          window.location.reload();
         } else {
           alert("Invalid email or password!");
         }
