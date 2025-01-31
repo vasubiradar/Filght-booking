@@ -1,62 +1,62 @@
-import React, { useState } from 'react';
-import './contact.css'; // Your CSS file
+import React, { useState } from "react";
+import "./contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log(formData);
+    alert(`Thank you, ${formData.name}! Your message has been sent.`);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <div className="contact-container">
-      <div className="contact-overlay">
-        <h1>Contact Us</h1>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-button">Submit</button>
+    <div className="contact-page">
+      <div className="contact-box">
+        <h2>Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your name"
+            required
+          />
+
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            required
+          />
+
+          <label htmlFor="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your message here..."
+            rows="4"
+            required
+          />
+
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </div>

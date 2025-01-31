@@ -17,6 +17,11 @@ const HomePage = () => {
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        {/* Transparent Box with Message */}
+        <div className="transparent-box">
+          <h2 className="box-title">Book your ticket with SafarEasy and enjoy your flight ✈️</h2>
+          <button className="book-btn">Book Now</button>
+        </div>
       </section>
 
       {/* Flight Coupons Section */}

@@ -72,8 +72,9 @@ const Signin = ({ setIsAuthenticated, setIsUser, setIsAdmin }) => {
           />
         </div>
         <button type="submit" className="signin-submit-btn">Sign In</button>
+        <p>Don't have an account? <a href="/signup">Signup</a></p>
       </form>
-      <p>Don't have an account? <a href="/signup">Signup</a></p>
+      
     </div>
   );
 };
