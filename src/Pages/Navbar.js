@@ -7,14 +7,11 @@ const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem("isAuthenticated") === "true"
   );
-  const [username, setUsername] = useState("");  // To store the username
-  const [userId, setUserId] = useState(localStorage.getItem("userId"));  // Store user ID from local storage
+  const [username, setUsername] = useState("");
+  const [userId, setUserId] = useState(localStorage.getItem("userId"));
 
   useEffect(() => {
-    // Ensure authentication status is correctly set when component mounts
     setIsAuthenticated(localStorage.getItem("isAuthenticated") === "true");
-
-    // Fetch username from localStorage after login
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
       setUsername(storedUsername);
@@ -22,26 +19,22 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = () => {
-    // Clear authentication data from localStorage
-    localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("isUser");
-    localStorage.removeItem("isAdmin");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("username");
-
-    // Update state and redirect
+    localStorage.clear();
     setIsAuthenticated(false);
-    setUsername("");  // Clear the username
+    setUsername("");
     navigate("/");
-
-    // Refresh once after logout to update UI
     setTimeout(() => window.location.reload(), 100);
   };
 
   return (
     <nav className="navbar">
-      {/* Left Side - Logo & College Name */}
+      {/* Left Side - Airplane Logo & Brand Name */}
       <div className="nav-logo">
+        <img
+          src="https://media.istockphoto.com/id/1258141375/vector/plane-travel-icon-air-travel-around-the-world-flying-around-the-world-travel-agency-logo.jpg?s=612x612&w=0&k=20&c=QaZk5NDYsdfKd_7iUNAe3CImkcwlzyaibpMuYIteeWY="
+          alt="Airplane Logo"
+          className="airplane-logo"
+        />
         <span className="college-name">SufarEasy</span>
       </div>
 
@@ -54,11 +47,10 @@ const Navbar = () => {
 
         {isAuthenticated ? (
           <>
-            {/* Display the profile icon and username */}
             <div className="profile-section">
               <span className="profile-username">{username}</span>
               <Link to={`/profile/${userId}`} className="profile-icon">
-                <img src="path/to/profile-icon.png" alt="Profile" className="profile-image" />
+                <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="Profile" className="profile-image" />
               </Link>
             </div>
             <button onClick={handleLogout} className="nav-item login-btn">

@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background: #001830;
-    padding: 10px 30px;
+    padding:20px 20px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -19,18 +19,18 @@
 .nav-item {
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: color 0.3s ease-in-out;
     align-self: center;
 }
 
 .nav-item:hover {
-    color: #dec161;
+    color: #61d0de;
 }
 
 /* Login Button */
 .login-btn {
-    background: #ffdd57;
+    background: #38b3b5;
     color: #00274d;
     padding: 5px 12px;
     border-radius: 5px;
@@ -52,6 +52,12 @@
     align-items: center;
     gap: 10px;
 }
+.airplane-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
 
 .college-logo {
     width: 50px;

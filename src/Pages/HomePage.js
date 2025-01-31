@@ -1,28 +1,20 @@
 import React from "react";
 import "./HomePage.css";
+import video from "./video.mp4"; // Import the video from the specified location
 
 const HomePage = () => {
-  const heroImage = "https://t3.ftcdn.net/jpg/02/84/36/48/360_F_284364895_3uU4w7qfgaBtBD0ugtA1SVgXHQJ5kL8d.jpg"; // Example image
-
   const flightCoupons = [
-    "https://via.placeholder.com/300x150?text=Flight+Coupon+1",
-    "https://via.placeholder.com/300x150?text=Flight+Coupon+2",
-    "https://via.placeholder.com/300x150?text=Flight+Coupon+3",
+    "https://www.ixigo.com/offers/_next/image?url=https%3A%2F%2Fimages.ixigo.com%2Fimage%2Fupload%2Foffers_and_deals%2Fa43885c962d56183e7e22fbafcc0c773-uijjx.png&w=828&q=75",
+    "https://cdn.grabon.in/gograbon/images/web-images/uploads/1618575355495/flight-offers.jpg",
+    "https://www.shopickr.com/wp-content/uploads/2016/07/paytm-flyday-sale-cashback-on-flight-tickets-cheap-air-bookings.jpg",
   ];
 
   return (
     <div className="homepage-container">
-      {/* Navbar with Flight Booking Logo */}
-      <nav className="navbar">
-        <div className="navbar-logo">
-          <img src="https://via.placeholder.com/150x50?text=Flight+Logo" alt="Flight Booking Logo" />
-        </div>
-      </nav>
-
       {/* Full Screen Video Section */}
       <section className="video-section">
         <video className="full-video" autoPlay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>
