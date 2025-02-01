@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Sign.css";
 
 const Login = () => {
@@ -40,6 +40,9 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
+        <p className="signup-link">
+          Don't have an account? <Link to="/signup">Sign up here</Link>
+        </p>
       </form>
     </div>
   );
