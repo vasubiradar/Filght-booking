@@ -41,14 +41,11 @@ const Navbar = () => {
 
         {isAuthenticated ? (
           <>
+            {/* Profile Section */}
             <div className="profile-section">
-              <span className="profile-username">Welcome, {username}</span>
-              <Link to={`/profile/${userId}`} className="profile-icon">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/456/456212.png"
-                  alt="Profile"
-                  className="profile-image"
-                />
+              {/* <span className="profile-username">Welcome, {username}</span> */}
+              <Link to={`/profile/${userId}`} className="nav-item profile-btn">
+                Profile
               </Link>
               <button onClick={handleLogout} className="nav-item logout-btn">
                 Logout
@@ -56,6 +53,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
+          // Show Login button if not authenticated
           <Link to="/login" className="nav-item login-btn">Login</Link>
         )}
       </div>
