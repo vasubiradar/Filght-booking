@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FlightService from "./FlightService";
 import UserService from "./UserService";
 import "./AdminPage.css";
+import flightlogo from './flightlogo.jpg';
 
 const AdminDashboard = () => {
   const [selectedOption, setSelectedOption] = useState("showFlights");
@@ -71,6 +72,19 @@ const AdminDashboard = () => {
       .catch((error) => console.error("Error adding admin:", error));
   };
 
+  const handleDelete = (flightId) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this flight?");
+    if (confirmDelete) {
+      FlightService.deleteFlight(flightId)
+        .then(() => {
+          alert("Flight deleted successfully!");
+          setFlights(flights.filter((flight) => flight.id !== flightId));
+        })
+        .catch((error) => console.error("Error deleting flight:", error));
+    }
+  };
+  
+
   return (
     <div className="admin-container">
       {/* Sidebar */}
@@ -83,43 +97,57 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <div className="content">
-        {selectedOption === "showFlights" && (
-          <div>
-            <h2>All Flights</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Flight Name</th>
-                  <th>Departure</th>
-                  <th>Destination</th>
-                  <th>Departure Time</th>
-                  <th>Arrival Time</th>
-                  <th>Total Seats</th>
-                  <th>Available Seats</th>
-                  <th>Price</th>
-                  <th>Airline Code</th>
-                </tr>
-              </thead>
-              <tbody>
-                {flights.map((flight) => (
-                  <tr key={flight.id}>
-                    <td>{flight.id}</td>
-                    <td>{flight.flightName}</td>
-                    <td>{flight.departure}</td>
-                    <td>{flight.destination}</td>
-                    <td>{flight.departureTime}</td>
-                    <td>{flight.arrivalTime}</td>
-                    <td>{flight.totalSeats}</td>
-                    <td>{flight.availableSeats}</td>
-                    <td>${flight.price}</td>
-                    <td>{flight.airlineCode}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+      {selectedOption === "showFlights" && (
+  <div className="table-container">
+    <h2>All Flights</h2>
+    <table className="flight-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Flight Name</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Total Seats</th>
+          <th>Available Seats</th>
+          <th>Price</th>
+          <th>Airline Code</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {flights.map((flight) => (
+          <tr key={flight.id}>
+            <td>
+              <img src={flightlogo} alt={flight.flightName} />
+            </td>
+            <td>{flight.flightName}</td>
+            <td>{flight.departure}</td>
+            <td>{flight.destination}</td>
+            <td>{flight.departureTime}</td>
+            <td>{flight.arrivalTime}</td>
+            <td>{flight.totalSeats}</td>
+            <td>{flight.availableSeats}</td>
+            <td>${flight.price}</td>
+            <td>{flight.airlineCode}</td>
+            <td>
+              <button 
+                className="delete-btn"
+                onClick={() => handleDelete(flight.id)}
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
+
+
+
 
         {selectedOption === "addFlight" && (
           <div>

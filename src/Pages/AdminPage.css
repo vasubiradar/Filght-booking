@@ -5,8 +5,8 @@
   
   .sidebar {
     width: 250px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+    background: linear-gradient(135deg, #021028, #112d5e);
+    color: rgb(249, 249, 249);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -15,10 +15,12 @@
   .sidebar h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
   }
   
   .sidebar button {
-    background-color: #f39c12;
+    background-color: #133b70;
+    border: #021028;
     color: white;
     border: none;
     padding: 10px;
@@ -29,27 +31,158 @@
   }
   
   .sidebar button:hover {
-    background-color: #e67e22;
+    background-color: #4f85e3;
   }
   
-  .content {
-    flex-grow: 1;
+  .admin-container {
+    display: flex;
+    flex-direction: row;
     padding: 20px;
   }
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  .sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 2px solid #ddd;
   }
   
-  th, td {
-    border: 1px solid black;
-    padding: 10px;
+  .sidebar h2 {
     text-align: center;
+    color: #333;
   }
+  
+  .sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .sidebar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    color: white;
+  }
+  
+  .sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .sidebar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .content {
+    width: 80%;
+    padding: 20px;
+  }
+  
+  .table-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e0f2ff, #b3d4ff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flight-table thead {
+    background: linear-gradient(135deg, #003366, #0055a4);
+    color: white;
+  }
+  
+  .flight-table th, 
+  .flight-table td {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .flight-table th {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .flight-table tr {
+    border-bottom: 2px solid #99c2ff; /* Row border only */
+  }
+  
+  .flight-table tbody tr:nth-child(even) {
+    background: #d6e9ff; /* Alternate row shading */
+  }
+  
+  .flight-table tbody tr:nth-child(odd) {
+    background: #f0f8ff;
+  }
+  
+  .flight-table tbody tr:hover {
+    background: #19314a; /* Hover effect */
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .flight-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .delete-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  
   
   form {
     display: flex;
@@ -64,7 +197,7 @@
   }
   
   form button {
-    background-color: #27ae60;
+    background-color: #18356b;
     color: white;
     border: none;
     cursor: pointer;
@@ -72,6 +205,6 @@
   }
   
   form button:hover {
-    background-color: #2ecc71;
+    background-color: #0d2c46;
   }
   
