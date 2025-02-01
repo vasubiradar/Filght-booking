@@ -4,12 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  background: url('https://images.unsplash.com/photo-1606768666853-403c90a981ad?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmxpZ2h0fGVufDB8fDB8fHww') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Contact Box Styling */
 .contact-box {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
   width: 400px;
   border-radius: 12px;
