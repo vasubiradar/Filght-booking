@@ -30,7 +30,7 @@ const Navbar = () => {
           alt="Airplane Logo"
           className="airplane-logo"
         />
-        <span className="college-name">SufarEasy</span>
+        <span className="college-name">SafarEasy</span>
       </div>
 
       <div className="nav-links">

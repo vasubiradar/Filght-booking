@@ -11,6 +11,7 @@ import About from "./Pages/about.js";
 import Contact from "./Pages/contact.js";
 import FlightList from "./Pages/allflight.js";
 import AllFlights from "./Pages/AllFlights.js";
+import FlightBookingForm from "./Pages/bookingform.js";
 import './App.css';
 
 import { getFromLocalStorage, setToLocalStorage } from "./Services/LocalStorageUtil.js";
@@ -53,6 +54,8 @@ function App() {
            <Route path="/contact" element={<Contact />} />
            <Route path="/about" element={<About />} />
            <Route path="/allflight" element={<AllFlights/>} />
+           <Route path="/booking/:flightId" element={<FlightBookingForm />} />
+           
       </Routes>
       
       <Footer />

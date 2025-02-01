@@ -1,10 +1,10 @@
 /* General Navbar Styling */
 .navbar {
-    background-color: #007bff; /* SafarEasy blue background */
+    background-color: #14254e; /* SafarEasy blue background */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 10px 10px;
     position: sticky;
     top: 0;
     z-index: 1000;

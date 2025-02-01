@@ -1,188 +1,72 @@
-/* Main Container Styling */
-.login-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url("https://media.istockphoto.com/id/1332501286/photo/aerial-flying-airplane-and-sky-landscape-close-up.jpg?s=612x612&w=0&k=20&c=nVePwMoSkfxzjhjKfbKM4WWyDdewCziaRSjG3vzrJhM=") no-repeat center center;
-  background-size: cover;
-}
-
-/* Form Styling */
-.login-form {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 40px;
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-/* Header Styling */
-.login-form h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Label and Input Fields Styling */
-.login-form label {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #f7f7f7;
 }
 
-/* Placeholder Text Inside Input Fields */
-.login-form input::placeholder {
-  color: #aaa;
-  font-style: italic;
-}
-
-/* Button Styling */
-.login-form button {
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px;
-  margin-top: 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.login-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Signup Link Styling */
-.signup-link {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.signup-link a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
-}
-/* Main Container Styling */
-.login-container {
-  height: 100vh;
+.signin-form-container, .signup-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://media.istockphoto.com/id/1332501286/photo/aerial-flying-airplane-and-sky-landscape-close-up.jpg?s=612x612&w=0&k=20&c=nVePwMoSkfxzjhjKfbKM4WWyDdewCziaRSjG3vzrJhM=") no-repeat center center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('https://wallpapers.com/images/hd/professional-background-2b3p57557lfg0y5g.jpg'); /* Replace with your background image URL */
   background-size: cover;
+  background-position: center;
+  
 }
 
-/* Form Styling */
-.login-form {
-  background: rgba(255, 255, 255, 0.7);
+.signin-form, .signup-form {
+  background-color: rgba(209, 217, 228, 0.635);
   padding: 40px;
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-
-/* Header Styling */
-.login-form h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Label and Input Fields Styling */
-.login-form label {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  border: 1px solid black;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-  background-color: #f7f7f7;
-}
-
-/* Placeholder Text Inside Input Fields */
-.login-form input::placeholder {
-  color: #aaa;
-  font-style: italic;
-}
-
-/* Button Styling */
-.login-form button {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
-  background-color: #007bff;
+  max-width: 400px;
+}
+
+.signin-form-title, .signup-form-title {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signin-input-field, .signup-input-field {
+  margin-bottom: 20px;
+}
+
+.signin-input-label, .signup-input-label {
+  font-weight: bold;
+  color: #003366;
+}
+
+.signin-input, .signup-input, .signup-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signin-input:focus, .signup-input:focus, .signup-select:focus {
+  border-color: #003366;
+}
+
+.signin-submit-btn, .signup-submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #003366;
   color: white;
   border: none;
-  padding: 12px;
-  margin-top: 20px;
-  border-radius: 8px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.login-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Signup Link Styling */
-.signup-link {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.signup-link a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
+.signin-submit-btn:hover, .signup-submit-btn:hover {
+  background-color: #005bb5;
 }

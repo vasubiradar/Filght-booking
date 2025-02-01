@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FlightService from "./FlightService";
 import "./AllFlights.css";
 import img from './../flight.jpg';
+import { useNavigate } from "react-router-dom"; // Import to navigate
 import { ImGithub } from "react-icons/im";
 import flightlogo from './flightlogo.jpg';
 
@@ -9,6 +10,7 @@ const AllFlights = () => {
   const [flights, setFlights] = useState([]);
   const [filteredFlights, setFilteredFlights] = useState([]);
   const [search, setSearch] = useState({ from: "", to: "" });
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   useEffect(() => {
     FlightService.getAllFlights()
@@ -27,6 +29,11 @@ const AllFlights = () => {
         flight.destination.toLowerCase().includes(search.to.toLowerCase())
     );
     setFilteredFlights(filtered);
+  };
+
+  // Handle "Book Now" button click
+  const handleBookNow = (flightId) => {
+    navigate(`/booking/${flightId}`); // Navigate to the booking page with flightId
   };
 
   return (
@@ -65,7 +72,7 @@ const AllFlights = () => {
                 <p><strong>Arrival:</strong> {flight.arrivalTime}</p>
                 <p><strong>Seats:</strong> {flight.availableSeats}</p>
                 <p><strong>Price:</strong> ${flight.price}</p>
-                <button className="book-btn">Book Now</button>
+                <button className="book-btn" onClick={() => handleBookNow(flight.id)}>Book Now</button>
               </div>
             </div>
           ))
