@@ -1,71 +1,64 @@
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #001830;
-    padding:20px 20px;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Navigation Links */
-.nav-links {
+    padding: 1rem;
+    background-color: #f1f1f1;
+  }
+  
+  .nav-logo {
     display: flex;
-    gap: 20px;
-    
-}
-
-.nav-item {
+    align-items: center;
+  }
+  
+  .airplane-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .college-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .nav-item {
     text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
-    align-self: center;
-}
-
-.nav-item:hover {
-    color: #61d0de;
-}
-
-/* Login Button */
-.login-btn {
-    background: #38b3b5;
-    color: #00274d;
-    padding: 5px 12px;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-    
-}
-
-.login-btn:hover {
-    background: #f0ebac;
-    color: black;
-}
-
-/* College Logo & Name */
-.nav-logo {
+    color: #333;
+    padding: 5px 10px;
+  }
+  
+  .nav-item:hover {
+    color: #007bff;
+  }
+  
+  .profile-section {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-.airplane-logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
-
-
-.college-logo {
-    width: 50px;
-    height: 50px;
+  }
+  
+  .profile-image {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-}
-
-.college-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+  }
+  
+  .logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  

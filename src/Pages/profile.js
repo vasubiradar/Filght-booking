@@ -1,54 +1,69 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserService from "./UserService";
-import "./profile.css"; // Custom CSS for profile styling
+import "./profile.css";
 
 const Profile = () => {
-  const { userId } = useParams();
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const [userId] = useState(localStorage.getItem("userId"));
+  const [username, setUsername] = useState(localStorage.getItem("username"));
+  const [userProfile, setUserProfile] = useState(null);
 
   useEffect(() => {
-    UserService.getUserById(userId)
-      .then((response) => {
-        setUser(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user profile", error);
-      });
+    if (userId) {
+      UserService.getUserById(userId)
+        .then((response) => setUserProfile(response.data))
+        .catch(() => setUserProfile(null));
+    }
   }, [userId]);
 
-  if (!user) {
-    return <div>Loading...</div>;
-  }
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
-    <div className="profile-container">
-      <h2>{user.username}'s Profile</h2>
-      <div className="profile-image">
-        <img src={user.profilePic} alt="Profile" />
-      </div>
-      <div className="profile-details">
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Location:</strong> {user.location}</p>
+    <div className="profile-page-container">
+      <div className="jumbotron">
+        <h1 className="profile-heading">Welcome to Your Profile, {username}!</h1>
+        <p className="profile-subtitle">
+          Explore your personal details and view your flight booking information.
+        </p>
       </div>
 
-      {/* About Section */}
-      <div className="profile-about">
-        <h3>About {user.username}</h3>
-        <p>{user.about || "This user has not shared much about themselves yet."}</p>
+      <div className="profile-content">
+        <div className="profile-card">
+          <h2>Personal Details</h2>
+          {userProfile ? (
+            <>
+              <p><strong>Email:</strong> {userProfile.email}</p>
+              <p><strong>Phone:</strong> {userProfile.phone}</p>
+              <p><strong>Address:</strong> {userProfile.address}</p>
+            </>
+          ) : (
+            <p>Loading your details...</p>
+          )}
+        </div>
+
+        <div className="flight-booking-info">
+          <h2>Your Flight Bookings</h2>
+          <div className="flight-card">
+            <p><strong>Flight Number:</strong> SE123</p>
+            <p><strong>Departure:</strong> New Delhi, 10:00 AM</p>
+            <p><strong>Arrival:</strong> Mumbai, 12:30 PM</p>
+            <p><strong>Status:</strong> Confirmed</p>
+          </div>
+
+          <div className="flight-card">
+            <p><strong>Flight Number:</strong> SE456</p>
+            <p><strong>Departure:</strong> Bengaluru, 6:00 PM</p>
+            <p><strong>Arrival:</strong> Hyderabad, 7:15 PM</p>
+            <p><strong>Status:</strong> Pending Confirmation</p>
+          </div>
+        </div>
       </div>
 
-      {/* Safety Tips Section */}
-      <div className="profile-safety">
-        <h3>Safety Tips</h3>
-        <ul>
-          <li>Keep your personal information private and secure.</li>
-          <li>Always verify requests before sharing sensitive data.</li>
-          <li>Enable two-factor authentication (2FA) for your accounts.</li>
-        </ul>
-      </div>
-
-      <button className="profile-button">Edit Profile</button>
+      <button onClick={handleLogout} className="logout-btn">Logout</button>
     </div>
   );
 };

@@ -1,120 +1,82 @@
-/* Profile Container */
-.profile-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 30px;
+/* Background Image and Page Container */
+.profile-page-container {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/637/674/small_2x/jet-plane-in-flight-generative-ai-photo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+/* Jumbotron Styling */
+.jumbotron {
   text-align: center;
-  background: url("https://via.placeholder.com/1500x800") no-repeat center center/cover;
-  border-radius: 15px;
-  color: white;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Header Section */
-.profile-container h2 {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Profile Details Section */
-.profile-details {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
 }
 
-.profile-details p {
+.profile-heading {
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.profile-subtitle {
   font-size: 1.2rem;
-  color: #333;
-  margin: 10px 0;
+  color: #000000;
 }
 
-.profile-details p strong {
-  color: #007bff;
-  font-weight: bold;
+/* Profile Content */
+.profile-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 20px;
 }
 
-/* Profile Image Section */
-.profile-image {
-  margin-bottom: 20px;
+.profile-card,
+.flight-booking-info {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.profile-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #007bff;
+.profile-card h2,
+.flight-booking-info h2 {
+  color: #e5e5e5;
+  margin-bottom: 15px;
 }
 
-/* About Section */
-.profile-about {
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: left;
+/* Flight Booking Cards */
+.flight-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: #f1f1f1;
 }
 
-.profile-about h3 {
-  font-size: 2rem;
-  color: #007bff;
+.flight-card p {
+  margin: 5px 0;
 }
 
-.profile-about p {
-  font-size: 1.1rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Safety Tips Section */
-.profile-safety {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-top: 30px;
-}
-
-.profile-safety h3 {
-  font-size: 2rem;
-  color: #ff6f61;
-}
-
-.profile-safety ul {
-  list-style-type: disc;
-  padding-left: 40px;
-}
-
-.profile-safety li {
-  font-size: 1rem;
-  color: #555;
-  margin: 8px 0;
-}
-
-/* Button Style */
-.profile-button {
-  background-color: #007bff;
+/* Logout Button */
+.logout-btn {
+  display: block;
+  background-color: #ff5e57;
   color: white;
-  padding: 12px 25px;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
+  font-size: 1rem;
+  margin: 20px auto;
 }
 
-.profile-button:hover {
-  background-color: #0056b3;
-}
-
-.profile-button:focus {
-  outline: none;
+.logout-btn:hover {
+  background-color: #e94d45;
 }

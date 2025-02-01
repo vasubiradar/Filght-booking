@@ -9,6 +9,7 @@ import Footer from "./Pages/Footer";
 import Profile from "./Pages/profile.js";
 import About from "./Pages/about.js";
 import Contact from "./Pages/contact.js";
+import FlightList from "./Pages/allflight.js";
 import './App.css';
 
 import { getFromLocalStorage, setToLocalStorage } from "./Services/LocalStorageUtil.js";
@@ -50,6 +51,7 @@ function App() {
            <Route path="/profile/:userId" element={<Profile />} />  {/* Profile page route */}
            <Route path="/contact" element={<Contact />} />
            <Route path="/about" element={<About />} />
+           <Route path="/allfilght" element={<FlightList />} />
       </Routes>
       
       <Footer />
